@@ -41,9 +41,10 @@ mkdir -p "$group_dir/$(id -un)"
 # リポジトリをクローン
 work_dir="$group_dir/$(id -un)/geniac_prize_2026"
 git clone https://github.com/vodoomi/geniac_prize_2026_sandbox "$work_dir"
-git submodule update --init
 # 作業ディレクトリに移動
 cd "$work_dir"
+# サブモジュールを初期化
+git submodule update --init
 ```
 
 ### 3. CLI ツールをインストール
@@ -84,9 +85,9 @@ source ~/.bashrc
 `hf auth login` では SAM3 のアクセス承認を取得したアカウントのトークンを使用します。
 
 ```bash
-uv pythoninstall 3.10 3.12
+uv python install 3.10 3.12
 cd third_party/geniac_prize_2026_baseline
-uv venv
+uv venv --python 3.12
 uv pip install -e ".[dev]"
 source .venv/bin/activate
 uv tool install huggingface_hub
