@@ -1,0 +1,6 @@
+[submodule "third_party/geniac_prize_2026_code"]
+	path = third_party/geniac_prize_2026_code
+	url = https://github.com/matsuolab/geniac_prize_2026_code
+[submodule "third_party/geniac_prize_2026_baseline"]
+	path = third_party/geniac_prize_2026_baseline
+	url = https://github.com/matsuolab/geniac_prize_2026_baseline
