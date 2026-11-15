@@ -1,0 +1,330 @@
+split_id: local_v1_proposal
+status: proposal_not_frozen
+source:
+  taskpack: third_party/geniac_prize_2026_code/taskpacks/original/pack.yaml
+  sha256: d9d959bf0198c1059e2db0f11d1032cfbda720af96720675f27920b240226602
+history_policy: 動作確認の履歴はユーザーの指示により分割選定から除外。今回の分割を固定した時点から隔離を開始する。
+meaning_of_unseen: 追加学習・タスク固有の文書や例・攻略の作成に使わないタスク群。基盤モデルや配布済みスキルでの未見を保証しない。
+holdout_groups:
+  libero_multi_object_basket:
+  - libero_10_0
+  - libero_10_1
+  - libero_10_7
+  libero_book_caddy:
+  - libero_10_5
+  - libero_90_73
+  - libero_90_74
+  - libero_90_75
+  - libero_90_77
+  - libero_90_78
+  - libero_90_79
+  - libero_90_80
+  - libero_90_81
+  - libero_90_82
+  - libero_90_83
+  libero_butter_drawer_close:
+  - libero_90_3
+  - libero_90_4
+  libero_bowl_stacking:
+  - libero_90_16
+  - libero_90_17
+  - libero_90_63
+  - libero_90_64
+  libero_wine_rack:
+  - libero_90_27
+  - libero_goal_9
+  libero_ketchup_basket:
+  - libero_90_48
+  - libero_object_4
+  libero_orange_juice_basket:
+  - libero_90_53
+  - libero_object_9
+  behavior_toys:
+  - collecting_childrens_toys
+  - picking_up_toys
+  behavior_cutting_food:
+  - chop_an_onion
+  - slicing_vegetables
+  behavior_spraying:
+  - spraying_for_bugs
+  - spraying_fruit_trees
+  behavior_canning:
+  - can_meat
+  - canning_food
+  behavior_boxes_storage:
+  - boxing_books_up_for_storage
+  - moving_boxes_to_storage
+development_task_ids:
+  robosuite:
+  - cube_lifting
+  - cube_stack
+  - cube_restack
+  - nut_assembly
+  - spill_wipe
+  - two_arm_lift
+  - two_arm_handover
+  libero:
+  - libero_10_2
+  - libero_10_3
+  - libero_10_4
+  - libero_10_6
+  - libero_10_8
+  - libero_10_9
+  - libero_90_0
+  - libero_90_1
+  - libero_90_2
+  - libero_90_5
+  - libero_90_6
+  - libero_90_7
+  - libero_90_8
+  - libero_90_9
+  - libero_90_10
+  - libero_90_11
+  - libero_90_12
+  - libero_90_13
+  - libero_90_14
+  - libero_90_15
+  - libero_90_18
+  - libero_90_19
+  - libero_90_20
+  - libero_90_21
+  - libero_90_22
+  - libero_90_23
+  - libero_90_24
+  - libero_90_25
+  - libero_90_26
+  - libero_90_28
+  - libero_90_29
+  - libero_90_30
+  - libero_90_31
+  - libero_90_32
+  - libero_90_33
+  - libero_90_34
+  - libero_90_35
+  - libero_90_36
+  - libero_90_37
+  - libero_90_38
+  - libero_90_39
+  - libero_90_40
+  - libero_90_41
+  - libero_90_42
+  - libero_90_43
+  - libero_90_44
+  - libero_90_45
+  - libero_90_46
+  - libero_90_47
+  - libero_90_49
+  - libero_90_50
+  - libero_90_51
+  - libero_90_52
+  - libero_90_54
+  - libero_90_55
+  - libero_90_56
+  - libero_90_57
+  - libero_90_58
+  - libero_90_59
+  - libero_90_60
+  - libero_90_61
+  - libero_90_62
+  - libero_90_65
+  - libero_90_66
+  - libero_90_67
+  - libero_90_68
+  - libero_90_69
+  - libero_90_70
+  - libero_90_71
+  - libero_90_72
+  - libero_90_76
+  - libero_90_84
+  - libero_90_85
+  - libero_90_86
+  - libero_90_87
+  - libero_90_88
+  - libero_90_89
+  - libero_object_0
+  - libero_object_1
+  - libero_object_2
+  - libero_object_3
+  - libero_object_5
+  - libero_object_6
+  - libero_object_7
+  - libero_object_8
+  - libero_spatial_0
+  - libero_spatial_1
+  - libero_spatial_2
+  - libero_spatial_3
+  - libero_spatial_4
+  - libero_spatial_5
+  - libero_spatial_6
+  - libero_spatial_7
+  - libero_spatial_8
+  - libero_spatial_9
+  - libero_goal_0
+  - libero_goal_1
+  - libero_goal_2
+  - libero_goal_3
+  - libero_goal_4
+  - libero_goal_5
+  - libero_goal_6
+  - libero_goal_7
+  - libero_goal_8
+  behavior:
+  - picking_up_trash
+  - picking_up_radio
+  - assembling_gift_baskets
+  - attach_a_camera_to_a_tripod
+  - bringing_in_wood
+  - bringing_water
+  - carrying_in_groceries
+  - chopping_wood
+  - clean_a_patio
+  - clean_a_trumpet
+  - clean_boxing_gloves
+  - clean_up_your_desk
+  - cleaning_up_plates_and_food
+  - clearing_food_from_table_into_fridge
+  - cook_bacon
+  - cook_cabbage
+  - cook_hot_dogs
+  - freeze_pies
+  - getting_organized_for_work
+  - hanging_pictures
+  - hiding_Easter_eggs
+  - loading_the_car
+  - make_microwave_popcorn
+  - make_pizza
+  - outfit_a_basic_toolbox
+  - preparing_lunch_box
+  - putting_away_Halloween_decorations
+  - putting_dishes_away_after_cleaning
+  - putting_shoes_on_rack
+  - putting_up_Christmas_decorations_inside
+  - rearranging_kitchen_furniture
+  - set_up_a_coffee_station_in_your_kitchen
+  - setting_mousetraps
+  - setting_the_fire
+  - sorting_household_items
+  - sorting_vegetables
+  - storing_food
+  - tidying_bedroom
+  - wash_a_baseball_cap
+  - wash_dog_toys
+validation_task_ids:
+  robosuite: []
+  libero:
+  - libero_10_0
+  - libero_10_1
+  - libero_10_5
+  - libero_10_7
+  - libero_90_3
+  - libero_90_4
+  - libero_90_16
+  - libero_90_17
+  - libero_90_27
+  - libero_90_48
+  - libero_90_53
+  - libero_90_63
+  - libero_90_64
+  - libero_90_73
+  - libero_90_74
+  - libero_90_75
+  - libero_90_77
+  - libero_90_78
+  - libero_90_79
+  - libero_90_80
+  - libero_90_81
+  - libero_90_82
+  - libero_90_83
+  - libero_object_4
+  - libero_object_9
+  - libero_goal_9
+  behavior:
+  - boxing_books_up_for_storage
+  - can_meat
+  - canning_food
+  - chop_an_onion
+  - collecting_childrens_toys
+  - moving_boxes_to_storage
+  - picking_up_toys
+  - slicing_vegetables
+  - spraying_for_bugs
+  - spraying_fruit_trees
+initial_state_policy:
+  robosuite:
+    development_seeds:
+    - 301
+    - 400
+    validation_standard_seeds:
+    - 401
+    - 420
+    range_convention: 両端を含む範囲。数字は乱数seedであり配置IDではない。
+  libero:
+    verified_init_states_per_task: 50
+    development_layout_ids:
+    - 0
+    - 19
+    development_seed_range:
+    - 301
+    - 320
+    validation_standard_layout_ids:
+    - 40
+    - 44
+    validation_standard_seed_range:
+    - 441
+    - 445
+    mapping: layout_id = (seed - 1) % 50
+    range_convention: 両端を含む範囲。追加データのsuite派生形でも元layoutとタスク群を追跡する。
+  behavior:
+    development_instance_ids:
+    - 0
+    - 1
+    - 2
+    - 3
+    - 4
+    - 5
+    - 6
+    - 7
+    - 8
+    - 9
+    - 10
+    - 11
+    - 12
+    - 13
+    - 14
+    - 15
+    - 16
+    - 17
+    - 18
+    - 19
+    validation_seen_instance_ids:
+    - 100
+    - 101
+    - 102
+    - 103
+    - 104
+    validation_seen_status: 2025公開版で配置ファイルの存在を確認済み。シミュレータでの読み込みは未確認。
+    validation_unseen_instance_ids:
+    - 100
+    - 101
+    - 102
+    - 103
+    - 104
+    validation_unseen_status: タスク全体を開発から隔離し、既知タスクと同じinstance番号で検証する。シミュレータでの読み込みは未確認。
+    note: instance_idsは使用する番号の列挙。seedは事前サンプル済みinstance番号であり、任意の乱数seedを流用しない。
+validation_policy:
+  seen: development_task_idsのタスクを、開発と重ならない初期状態で評価。
+  unseen: validation_task_idsを全初期状態について開発から隔離し、固定した評価状態で評価。対象はLIBEROとBEHAVIORのみで、Robosuiteの未知タスク検証は行わない。
+  metrics:
+  - 環境別・seen/unseen別の成功率
+  - タスク平均・グループ平均の成功率
+  - 実行時間・失敗の内訳
+  comparison: 変更前後は同じタスク・初期状態・step上限・時間予算。エージェントの入力にseed・正解状態・成功フラグを混ぜない。
+  failures: 実行不能・欠損を成功率の分母から黙って除かない。インフラ障害とエージェント失敗を別記する。
+checks:
+  total_tasks: 187
+  development_tasks: 151
+  unseen_validation_tasks: 36
+  same_normalized_libero_goal_crossing_boundary: 0
+  simulation_executed: false
+  behavior_alternative_instances_verified: true
+  behavior_instance_loading_verified: false
