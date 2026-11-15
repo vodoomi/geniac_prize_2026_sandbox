@@ -1,0 +1,156 @@
+# exp001 LIBERO collection; paths are relative to this YAML.
+mode: collect
+capx_root: ../../../third_party/geniac_prize_2026_baseline/geniac_prize_2026_code
+launch_script: capx/envs/launch.py
+sim_python: .venv-libero/bin/python
+serve_python: .venv-serve/bin/python
+pythonpath: null
+model: Qwen/Qwen3.8-27B
+model_path: /home/group_9fce22/user_00003_9fce22/.cache/huggingface/hub/models--Qwen--Qwen3.8-27B/snapshots/1d4bf0f2ff6012fd82039f2fa52739d0dd7c60c0
+molmo: true
+molmo_path: /home/group_9fce22/user_00003_9fce22/.cache/huggingface/hub/models--allenai--Molmo2-8B/snapshots/e28fa28597e5ec5e0cca2201dd8ab33d48bc4a1b
+chat_template: ../../../third_party/geniac_prize_2026_baseline/runs/qwen38_low_reasoning.jinja
+output_dir: ../runs/collect_libero_part03
+port_offset: 0
+vllm_port_offset: 0
+b300_workarounds: true
+num_workers: 8
+trial_timeout_s: 2400
+max_model_len: 262144
+tensor_parallel_size: 1
+qwen_gpu_util: null
+molmo_gpu_util: 0.28
+tasks:
+- task: libero_90_52
+  config: libero_tasks/libero_90_52.yaml
+  layouts: 50
+  seeds:
+  - 301-320
+- task: libero_90_54
+  config: libero_tasks/libero_90_54.yaml
+  layouts: 50
+  seeds:
+  - 301-320
+- task: libero_90_55
+  config: libero_tasks/libero_90_55.yaml
+  layouts: 50
+  seeds:
+  - 301-320
+- task: libero_90_56
+  config: libero_tasks/libero_90_56.yaml
+  layouts: 50
+  seeds:
+  - 301-320
+- task: libero_90_57
+  config: libero_tasks/libero_90_57.yaml
+  layouts: 50
+  seeds:
+  - 301-320
+- task: libero_90_58
+  config: libero_tasks/libero_90_58.yaml
+  layouts: 50
+  seeds:
+  - 301-320
+- task: libero_90_59
+  config: libero_tasks/libero_90_59.yaml
+  layouts: 50
+  seeds:
+  - 301-320
+- task: libero_90_60
+  config: libero_tasks/libero_90_60.yaml
+  layouts: 50
+  seeds:
+  - 301-320
+- task: libero_90_61
+  config: libero_tasks/libero_90_61.yaml
+  layouts: 50
+  seeds:
+  - 301-320
+- task: libero_90_62
+  config: libero_tasks/libero_90_62.yaml
+  layouts: 50
+  seeds:
+  - 301-320
+- task: libero_90_65
+  config: libero_tasks/libero_90_65.yaml
+  layouts: 50
+  seeds:
+  - 301-320
+- task: libero_90_66
+  config: libero_tasks/libero_90_66.yaml
+  layouts: 50
+  seeds:
+  - 301-320
+- task: libero_90_67
+  config: libero_tasks/libero_90_67.yaml
+  layouts: 50
+  seeds:
+  - 301-320
+- task: libero_90_68
+  config: libero_tasks/libero_90_68.yaml
+  layouts: 50
+  seeds:
+  - 301-320
+- task: libero_90_69
+  config: libero_tasks/libero_90_69.yaml
+  layouts: 50
+  seeds:
+  - 301-320
+- task: libero_90_70
+  config: libero_tasks/libero_90_70.yaml
+  layouts: 50
+  seeds:
+  - 301-320
+- task: libero_90_71
+  config: libero_tasks/libero_90_71.yaml
+  layouts: 50
+  seeds:
+  - 301-320
+- task: libero_90_72
+  config: libero_tasks/libero_90_72.yaml
+  layouts: 50
+  seeds:
+  - 301-320
+- task: libero_90_76
+  config: libero_tasks/libero_90_76.yaml
+  layouts: 50
+  seeds:
+  - 301-320
+- task: libero_90_84
+  config: libero_tasks/libero_90_84.yaml
+  layouts: 50
+  seeds:
+  - 301-320
+- task: libero_90_85
+  config: libero_tasks/libero_90_85.yaml
+  layouts: 50
+  seeds:
+  - 301-320
+- task: libero_90_86
+  config: libero_tasks/libero_90_86.yaml
+  layouts: 50
+  seeds:
+  - 301-320
+- task: libero_90_87
+  config: libero_tasks/libero_90_87.yaml
+  layouts: 50
+  seeds:
+  - 301-320
+- task: libero_90_88
+  config: libero_tasks/libero_90_88.yaml
+  layouts: 50
+  seeds:
+  - 301-320
+- task: libero_90_89
+  config: libero_tasks/libero_90_89.yaml
+  layouts: 50
+  seeds:
+  - 301-320
+- task: libero_object_0
+  config: libero_tasks/libero_object_0.yaml
+  layouts: 50
+  seeds:
+  - 301-320
+extra_env:
+  VLLM_USE_FLASHINFER_SAMPLER: '0'
+  LIBERO_CONFIG_PATH: /home/group_9fce22/user_00003_9fce22/geniac_prize_2026/exps/exp001/configs/libero_runtime

@@ -1,0 +1,5 @@
+benchmark_root: /home/group_9fce22/user_00003_9fce22/geniac_prize_2026/third_party/geniac_prize_2026_baseline/geniac_prize_2026_code/capx/third_party/LIBERO-PRO/libero/libero
+assets: /home/group_9fce22/user_00003_9fce22/geniac_prize_2026/third_party/geniac_prize_2026_baseline/geniac_prize_2026_code/capx/third_party/LIBERO-PRO/libero/libero/assets
+bddl_files: /home/group_9fce22/user_00003_9fce22/geniac_prize_2026/third_party/geniac_prize_2026_baseline/geniac_prize_2026_code/capx/third_party/LIBERO-PRO/libero/libero/bddl_files
+init_states: /home/group_9fce22/user_00003_9fce22/geniac_prize_2026/third_party/geniac_prize_2026_baseline/geniac_prize_2026_code/capx/third_party/LIBERO-PRO/libero/libero/init_files
+datasets: /home/group_9fce22/user_00003_9fce22/geniac_prize_2026/third_party/geniac_prize_2026_baseline/geniac_prize_2026_code/capx/third_party/LIBERO-PRO/libero/datasets
