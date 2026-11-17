@@ -20,7 +20,7 @@ env:
       suite_name: libero_90
       task_id: 11
       privileged: false
-      max_steps: 4000
+      max_steps: 8000
       seed: null
       enable_render: false
       viser_debug: false
@@ -29,7 +29,7 @@ env:
       - FrankaLiberoApiReducedSkillLibrary
     prompt: |
       You are controlling a Franka Emika robot with API described below.
-      Goal: {libero_environment_goal}
+      Goal: Open the top drawer of the cabinet. Quaternions are WXYZ.
       In this robot environment, the agentview camera is looking at the robot's workspace from the front. In image space the right is world frame positive Y, up is world frame positive Z, and backward into the camera is world frame positive X.
       You may write python code comments for reasoning but ONLY write the executable Python code and do not write it in code fences.
       After this code executes, you will receive the current console stdout and stderr (any errors or print statements made in the code). You will then have the chance to write new code to query the environment state and/or complete the task.

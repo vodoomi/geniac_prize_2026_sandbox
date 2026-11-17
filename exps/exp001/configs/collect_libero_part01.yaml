@@ -4,13 +4,13 @@ capx_root: ../../../third_party/geniac_prize_2026_baseline/geniac_prize_2026_cod
 launch_script: capx/envs/launch.py
 sim_python: .venv-libero/bin/python
 serve_python: .venv-serve/bin/python
-pythonpath: null
+pythonpath: /home/group_9fce22/user_00003_9fce22/geniac_prize_2026/third_party/geniac_prize_2026_baseline/geniac_prize_2026_code:/home/group_9fce22/user_00003_9fce22/geniac_prize_2026/exps/exp001/src
 model: Qwen/Qwen3.8-27B
 model_path: /home/group_9fce22/user_00003_9fce22/.cache/huggingface/hub/models--Qwen--Qwen3.8-27B/snapshots/1d4bf0f2ff6012fd82039f2fa52739d0dd7c60c0
 molmo: true
 molmo_path: /home/group_9fce22/user_00003_9fce22/.cache/huggingface/hub/models--allenai--Molmo2-8B/snapshots/e28fa28597e5ec5e0cca2201dd8ab33d48bc4a1b
 chat_template: ../../../third_party/geniac_prize_2026_baseline/runs/qwen38_low_reasoning.jinja
-output_dir: ../runs/collect_libero_part01
+output_dir: ../runs/collect_libero_part01_v2
 port_offset: 0
 vllm_port_offset: 0
 b300_workarounds: true
