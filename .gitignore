@@ -1,2 +1,4 @@
 exps/*/logs/
 exps/*/runs/
+exps/*/runtime/
+exps/*/src/__pycache__/
