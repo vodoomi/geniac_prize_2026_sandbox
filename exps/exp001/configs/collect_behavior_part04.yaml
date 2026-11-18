@@ -1,0 +1,70 @@
+# BEHAVIOR seeds are actual instance IDs; use src/behavior_collect/plan.py.
+mode: collect
+capx_root: ../../../third_party/geniac_prize_2026_baseline/geniac_prize_2026_code
+launch_script: capx/envs/launch.py
+sim_python: /home/group_9fce22/user_00003_9fce22/geniac_prize_2026/exps/exp001/runtime/venv/bin/python
+serve_python: .venv-serve/bin/python
+pythonpath: /home/group_9fce22/user_00003_9fce22/geniac_prize_2026/third_party/geniac_prize_2026_baseline/geniac_prize_2026_code:/home/group_9fce22/user_00003_9fce22/geniac_prize_2026/exps/exp001/src
+model: Qwen/Qwen3.8-27B
+model_path: /home/group_9fce22/user_00003_9fce22/.cache/huggingface/hub/models--Qwen--Qwen3.8-27B/snapshots/1d4bf0f2ff6012fd82039f2fa52739d0dd7c60c0
+molmo: true
+molmo_path: /home/group_9fce22/user_00003_9fce22/.cache/huggingface/hub/models--allenai--Molmo2-8B/snapshots/e28fa28597e5ec5e0cca2201dd8ab33d48bc4a1b
+chat_template: ../../../third_party/geniac_prize_2026_baseline/runs/qwen38_low_reasoning.jinja
+output_dir: ../runs/collect_behavior_part04_v10
+port_offset: 200
+vllm_port_offset: 200
+b300_workarounds: true
+num_workers: 1
+trial_timeout_s: 3600
+max_model_len: 262144
+tensor_parallel_size: 1
+qwen_gpu_util: 0.45
+molmo_gpu_util: 0.18
+tasks:
+- task: rearranging_kitchen_furniture
+  config: behavior_tasks/rearranging_kitchen_furniture.yaml
+  seeds:
+  - 0-19
+- task: set_up_a_coffee_station_in_your_kitchen
+  config: behavior_tasks/set_up_a_coffee_station_in_your_kitchen.yaml
+  seeds:
+  - 0-19
+- task: setting_mousetraps
+  config: behavior_tasks/setting_mousetraps.yaml
+  seeds:
+  - 0-19
+- task: setting_the_fire
+  config: behavior_tasks/setting_the_fire.yaml
+  seeds:
+  - 0-19
+- task: sorting_household_items
+  config: behavior_tasks/sorting_household_items.yaml
+  seeds:
+  - 0-19
+- task: sorting_vegetables
+  config: behavior_tasks/sorting_vegetables.yaml
+  seeds:
+  - 0-19
+- task: storing_food
+  config: behavior_tasks/storing_food.yaml
+  seeds:
+  - 0-19
+- task: tidying_bedroom
+  config: behavior_tasks/tidying_bedroom.yaml
+  seeds:
+  - 0-19
+- task: wash_a_baseball_cap
+  config: behavior_tasks/wash_a_baseball_cap.yaml
+  seeds:
+  - 0-19
+- task: wash_dog_toys
+  config: behavior_tasks/wash_dog_toys.yaml
+  seeds:
+  - 0-19
+extra_env:
+  VLLM_USE_FLASHINFER_SAMPLER: '0'
+  OMNI_KIT_ACCEPT_EULA: 'YES'
+  OMNIGIBSON_HEADLESS: '1'
+  OMNIGIBSON_DATA_PATH: /home/group_9fce22/user_00003_9fce22/geniac_prize_2026/exps/exp001/runtime/data
+  EXP001_GRASP_PLANNER: graspgenx
+  EXP001_GRASPGENX_URL: http://127.0.0.1:8390

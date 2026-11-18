@@ -1,0 +1,70 @@
+# BEHAVIOR seeds are actual instance IDs; use src/behavior_collect/plan.py.
+mode: collect
+capx_root: ../../../third_party/geniac_prize_2026_baseline/geniac_prize_2026_code
+launch_script: capx/envs/launch.py
+sim_python: /home/group_9fce22/user_00003_9fce22/geniac_prize_2026/exps/exp001/runtime/venv/bin/python
+serve_python: .venv-serve/bin/python
+pythonpath: /home/group_9fce22/user_00003_9fce22/geniac_prize_2026/third_party/geniac_prize_2026_baseline/geniac_prize_2026_code:/home/group_9fce22/user_00003_9fce22/geniac_prize_2026/exps/exp001/src
+model: Qwen/Qwen3.8-27B
+model_path: /home/group_9fce22/user_00003_9fce22/.cache/huggingface/hub/models--Qwen--Qwen3.8-27B/snapshots/1d4bf0f2ff6012fd82039f2fa52739d0dd7c60c0
+molmo: true
+molmo_path: /home/group_9fce22/user_00003_9fce22/.cache/huggingface/hub/models--allenai--Molmo2-8B/snapshots/e28fa28597e5ec5e0cca2201dd8ab33d48bc4a1b
+chat_template: ../../../third_party/geniac_prize_2026_baseline/runs/qwen38_low_reasoning.jinja
+output_dir: ../runs/collect_behavior_part01_v10
+port_offset: 200
+vllm_port_offset: 200
+b300_workarounds: true
+num_workers: 1
+trial_timeout_s: 3600
+max_model_len: 262144
+tensor_parallel_size: 1
+qwen_gpu_util: 0.45
+molmo_gpu_util: 0.18
+tasks:
+- task: picking_up_trash
+  config: behavior_tasks/picking_up_trash.yaml
+  seeds:
+  - 0-19
+- task: picking_up_radio
+  config: behavior_tasks/picking_up_radio.yaml
+  seeds:
+  - 0-19
+- task: assembling_gift_baskets
+  config: behavior_tasks/assembling_gift_baskets.yaml
+  seeds:
+  - 0-19
+- task: attach_a_camera_to_a_tripod
+  config: behavior_tasks/attach_a_camera_to_a_tripod.yaml
+  seeds:
+  - 0-19
+- task: bringing_in_wood
+  config: behavior_tasks/bringing_in_wood.yaml
+  seeds:
+  - 0-19
+- task: bringing_water
+  config: behavior_tasks/bringing_water.yaml
+  seeds:
+  - 0-19
+- task: carrying_in_groceries
+  config: behavior_tasks/carrying_in_groceries.yaml
+  seeds:
+  - 0-19
+- task: chopping_wood
+  config: behavior_tasks/chopping_wood.yaml
+  seeds:
+  - 0-19
+- task: clean_a_patio
+  config: behavior_tasks/clean_a_patio.yaml
+  seeds:
+  - 0-19
+- task: clean_a_trumpet
+  config: behavior_tasks/clean_a_trumpet.yaml
+  seeds:
+  - 0-19
+extra_env:
+  VLLM_USE_FLASHINFER_SAMPLER: '0'
+  OMNI_KIT_ACCEPT_EULA: 'YES'
+  OMNIGIBSON_HEADLESS: '1'
+  OMNIGIBSON_DATA_PATH: /home/group_9fce22/user_00003_9fce22/geniac_prize_2026/exps/exp001/runtime/data
+  EXP001_GRASP_PLANNER: graspgenx
+  EXP001_GRASPGENX_URL: http://127.0.0.1:8390
