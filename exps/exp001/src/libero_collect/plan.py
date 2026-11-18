@@ -7,10 +7,19 @@ Refuses a spec unless every task config
   ``{libero_environment_goal}`` into the first prompt);
 * has the same multi-turn prompt and APIs as that submission config;
 * has the simulator horizon equal to the taskpack's ``trial_steplimit``.
-The generated ``run.sh`` launches ``launch_libero.py`` (success latch) instead of
+The generated ``run.sh`` launches ``libero_collect/launch.py`` (success latch) instead of
 CaP-X's ``launch.py``.
 """
 from __future__ import annotations
+
+if __package__ in (None, ""):
+    # Run as a file: put src/ (not this package directory) first on sys.path so
+    # sibling modules are imported through the package and cannot shadow others.
+    import sys as _sys
+    from pathlib import Path as _Path
+    _here = _Path(__file__).resolve().parent
+    _sys.path[:] = [p for p in _sys.path if _Path(p or ".").resolve() != _here]
+    _sys.path.insert(0, str(_here.parent))
 
 import argparse
 import json
@@ -21,13 +30,13 @@ import yaml
 from geniac_baseline.collect import plan
 from geniac_baseline.collect.preflight import PreflightError
 
-EXP = Path(__file__).resolve().parents[1]
+EXP = Path(__file__).resolve().parents[2]
 ROOT = EXP.parents[1]
 BASELINE = ROOT / "third_party/geniac_prize_2026_baseline"
 SUBMISSION_CONFIG = BASELINE / "submission/gateway/franka_libero.yaml"
 TASKPACK = ROOT / "third_party/geniac_prize_2026_code/taskpacks/original/pack.yaml"
 PLACEHOLDER = "{task_instruction}"
-BOOTSTRAP = EXP / "src/launch_libero.py"
+BOOTSTRAP = EXP / "src/libero_collect/launch.py"
 
 
 def taskpack_tasks() -> dict[str, dict]:
@@ -55,7 +64,7 @@ def validated_spec(path: Path):
     spec = plan.load_spec(path)
     src = str(EXP / "src")
     if not spec.pythonpath or src not in spec.pythonpath.split(":"):
-        raise PreflightError(f"pythonpath must include {src} (launch_libero.py imports libero_parity)")
+        raise PreflightError(f"pythonpath must include {src} (libero_collect/launch.py imports libero_collect.parity)")
     tasks = taskpack_tasks()
     submission = yaml.safe_load(SUBMISSION_CONFIG.read_text())
     for task in spec.tasks:

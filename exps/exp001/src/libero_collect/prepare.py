@@ -2,6 +2,15 @@
 
 from __future__ import annotations
 
+if __package__ in (None, ""):
+    # Run as a file: put src/ (not this package directory) first on sys.path so
+    # sibling modules are imported through the package and cannot shadow others.
+    import sys as _sys
+    from pathlib import Path as _Path
+    _here = _Path(__file__).resolve().parent
+    _sys.path[:] = [p for p in _sys.path if _Path(p or ".").resolve() != _here]
+    _sys.path.insert(0, str(_here.parent))
+
 import ast
 import copy
 from pathlib import Path
@@ -11,7 +20,7 @@ import yaml
 
 
 def main() -> None:
-    exp = Path(__file__).resolve().parents[1]
+    exp = Path(__file__).resolve().parents[2]
     root = exp.parents[1]
     baseline = root / "third_party/geniac_prize_2026_baseline"
     capx = baseline / "geniac_prize_2026_code"
@@ -73,7 +82,7 @@ def main() -> None:
                  "sim_python": ".venv-libero/bin/python", "num_workers": 8,
                  "chat_template": "../../../third_party/geniac_prize_2026_baseline/runs/qwen38_low_reasoning.jinja",
                  "b300_workarounds": True, "tasks": tasks,
-                 # launch_libero.py (success latch) imports from exp001/src.
+                 # libero_collect/launch.py (success latch) imports from exp001/src.
                  "pythonpath": f"{capx}:{exp / 'src'}"})
     spec.setdefault("extra_env", {}).update({"VLLM_USE_FLASHINFER_SAMPLER": "0", "LIBERO_CONFIG_PATH": str(runtime)})
     for key in ["model_path", "molmo_path"]:

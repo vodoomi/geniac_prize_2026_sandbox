@@ -8,7 +8,7 @@ undone would be scored as a failure. This latches success after every
 ``handle.step`` exactly like the gateway.
 
 The step limit itself is the simulator horizon (``low_level.max_steps``), which
-``prepare_libero.py`` sets to the taskpack's ``trial_steplimit``; LIBERO's settling
+``libero_collect/prepare.py`` sets to the taskpack's ``trial_steplimit``; LIBERO's settling
 steps at reset are taken back off that count, as in the gateway. Stepping past it
 raises robosuite's "executing action in terminated episode", which
 ``capx.envs.trial`` treats as truncation.
