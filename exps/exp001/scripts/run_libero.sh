@@ -46,7 +46,7 @@ for part in 01 02 03 04; do
   spec="$EXP_DIR/configs/${name}.yaml"
   # 出力先はspecのoutput_dir（v2: 評価と同じ指示文・ステップ上限・成功判定）。
   run_dir=$(PYTHONPATH="$EXP_DIR/src" "$BASELINE_DIR/.venv/bin/python" -c \
-    'from pathlib import Path; import sys; from plan_libero import validated_spec; print(validated_spec(Path(sys.argv[1])).output_dir)' "$spec")
+    'from pathlib import Path; import sys; from libero_collect.plan import validated_spec; print(validated_spec(Path(sys.argv[1])).output_dir)' "$spec")
   done_file="$run_dir/.collection-complete"
   spec_digest=$(sha256sum "$spec")
   spec_digest=${spec_digest%% *}
@@ -67,7 +67,7 @@ for part in 01 02 03 04; do
   fi
 
   echo "[run] $name: 計画を生成します。"
-  PYTHONPATH="$EXP_DIR/src" "$BASELINE_DIR/.venv/bin/python" "$EXP_DIR/src/plan_libero.py" --spec "$spec"
+  PYTHONPATH="$EXP_DIR/src" "$BASELINE_DIR/.venv/bin/python" "$EXP_DIR/src/libero_collect/plan.py" --spec "$spec"
 
   echo "[run] $name: 収集を開始します。"
   time bash "$run_dir/run.sh"
